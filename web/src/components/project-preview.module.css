@@ -10,16 +10,13 @@
 
 .leadMediaThumb {
   position: relative;
-  padding-bottom: 66.666%;
-  background: #eee;
+
+  height: 400px;
 
   @nest & img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    display: block;
     height: 100%;
-    object-fit: cover;
+    margin: 0 auto;
   }
 }
 

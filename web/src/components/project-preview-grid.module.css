@@ -19,7 +19,7 @@
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 100px 100px;
   grid-gap: 2em;
 
   @media (--media-min-small) {
