@@ -9,7 +9,7 @@
 
 .mainImage {
   position: relative;
-  padding-bottom: calc(1/6 * 100%);
+  padding-bottom: 100px;
 
 
   @nest & img {
