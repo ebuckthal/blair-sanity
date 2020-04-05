@@ -3,7 +3,7 @@ export default {
     {
       name: "document-list",
       options: { title: "Works", order: "_createdAt desc", types: ["work"] },
-      layout: { width: "large" },
+      layout: { width: "small" },
     },
     {
       name: "project-info",
