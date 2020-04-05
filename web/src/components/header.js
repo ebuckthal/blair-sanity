@@ -11,13 +11,6 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
       <div className={styles.branding}>
         <Link to="/">{siteTitle}</Link>
       </div>
-
-      <button
-        className={styles.toggleNavButton}
-        onClick={showNav ? onHideNav : onShowNav}
-      >
-        <Icon symbol="hamburger" />
-      </button>
     </div>
   </div>
 );

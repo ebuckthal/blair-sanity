@@ -19,8 +19,21 @@
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
-  grid-gap: 2em;
+
+  @media (--media-max-small) {
+    grid-template-columns: 1fr; 
+    grid-gap: 2em 0;
+  }
+
+  @media (--media-min-medium) {
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 2em;
+  }
+
+  @media (--media-min-large) {
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-gap: 2em;
+  }
 
 }
 
