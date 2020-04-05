@@ -17,7 +17,7 @@ function Project(props) {
         <div className={styles.mainImage}>
           <img
             src={imageUrlFor(buildImageObj(mainImage)).width(1000).fit("scale").url()}
-            alt={mainImage.alt}
+            alt={`Blair Ekleberry - ${title}`}
           />
         </div>
       )}

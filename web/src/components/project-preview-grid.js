@@ -8,14 +8,17 @@ function ProjectPreviewGrid(props) {
   return (
     <div className={styles.root}>
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
-      <ul className={styles.grid}>
+      <div className={styles.grid}>
         {props.nodes &&
           props.nodes.map((node) => (
-            <li key={node.id}>
+            <div
+              className={node.columnSpan > 1 ? styles.gridItem2Column : styles.gridItem}
+              key={node.id}
+            >
               <ProjectPreview {...node} />
-            </li>
+            </div>
           ))}
-      </ul>
+      </div>
     </div>
   );
 }

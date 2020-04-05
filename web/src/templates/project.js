@@ -8,7 +8,7 @@ import Layout from "../containers/layout";
 
 export const query = graphql`
   query ProjectTemplateQuery($id: String!) {
-    sampleProject: sanitySampleProject(id: { eq: $id }) {
+    sampleProject: sanityWork(id: { eq: $id }) {
       id
       publishedAt
       mainImage {
@@ -31,7 +31,6 @@ export const query = graphql`
         asset {
           _id
         }
-        alt
       }
       title
       slug {

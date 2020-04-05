@@ -19,16 +19,18 @@
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: 100px 100px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
   grid-gap: 2em;
 
-  @media (--media-min-small) {
-    grid-template-columns: 1fr 1fr;
-  }
+}
 
-  @media (--media-min-medium) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+.gridItem2Column {
+  display: grid;
+  grid-column: auto / span 2;
+}
+
+.gridItem {
+  display: grid;
 }
 
 .browseMoreNav {

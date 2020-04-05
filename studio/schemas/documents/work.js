@@ -20,6 +20,11 @@ export default {
       type: "figure",
     },
     {
+      name: "columnSpan",
+      title: "Column Span",
+      type: "number",
+    },
+    {
       name: "publishedAt",
       title: "Published at",
       description:

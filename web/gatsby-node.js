@@ -9,12 +9,11 @@ async function createProjectPages(graphql, actions, reporter) {
   const { createPage } = actions;
   const result = await graphql(`
     {
-      allSanitySampleProject(
-        filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-      ) {
+      allSanityWork(filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }) {
         edges {
           node {
             id
+            columnSpan
             publishedAt
             slug {
               current
@@ -27,7 +26,7 @@ async function createProjectPages(graphql, actions, reporter) {
 
   if (result.errors) throw result.errors;
 
-  const projectEdges = (result.data.allSanitySampleProject || {}).edges || [];
+  const projectEdges = (result.data.allSanityWork || {}).edges || [];
 
   projectEdges
     .filter((edge) => !isFuture(edge.node.publishedAt))
