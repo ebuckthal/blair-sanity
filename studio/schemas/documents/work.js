@@ -1,5 +1,3 @@
-import { format } from "date-fns";
-
 export default {
   name: "work",
   title: "Work",
@@ -14,18 +12,20 @@ export default {
       name: "slug",
       title: "Slug",
       type: "slug",
-      description: "The identifier for the URL i.e. 'at-buttes-chaumont'",
-    },
-    {
-      name: "publishedAt",
-      title: "Published at",
-      description: "Use this field to order the works. Latest works appears first.",
-      type: "datetime",
+      description: "What the URL should be i.e. '/at-buttes-chaumont'",
     },
     {
       name: "mainImage",
       title: "Main image",
       type: "figure",
+    },
+    {
+      name: "publishedAt",
+      title: "Published at",
+      description:
+        "Use this field to order the works. Latest works appears first. It is not visible",
+      type: "date",
+      validation: (Rule) => Rule.error("You have to fill out the alternative text.").required(),
     },
   ],
   preview: {
@@ -35,13 +35,12 @@ export default {
       slug: "slug",
       media: "mainImage",
     },
-    prepare({ title = "No title", publishedAt, slug = {}, media }) {
-      const dateSegment = format(publishedAt, "YYYY/MM");
+    prepare({ title = "No title", slug, media }) {
       const path = `/${slug.current}`;
       return {
         title,
         media,
-        subtitle: publishedAt ? path : "Missing publishing date",
+        subtitle: path,
       };
     },
   },
