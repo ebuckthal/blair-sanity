@@ -40,12 +40,11 @@ export default {
       slug: "slug",
       media: "mainImage",
     },
-    prepare({ title = "No title", slug, media }) {
-      const path = `/${slug.current}`;
+    prepare({ title = "No title", publishedAt, slug, media }) {
       return {
-        title,
+        title: `${title} ${slug}`,
         media,
-        subtitle: path,
+        subtitle: publishedAt,
       };
     },
   },
