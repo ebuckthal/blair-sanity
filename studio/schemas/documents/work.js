@@ -33,6 +33,13 @@ export default {
       validation: (Rule) => Rule.error("You have to fill out the alternative text.").required(),
     },
   ],
+  orderings: [
+    {
+      title: "Published At",
+      name: "publishedAt",
+      by: [{ field: "publishedAt", direction: "desc" }],
+    },
+  ],
   preview: {
     select: {
       title: "title",
@@ -42,7 +49,7 @@ export default {
     },
     prepare({ title = "No title", publishedAt, slug, media }) {
       return {
-        title: `${title} ${slug}`,
+        title,
         media,
         subtitle: publishedAt,
       };
