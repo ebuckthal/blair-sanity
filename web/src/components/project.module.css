@@ -17,12 +17,14 @@
 
   display: grid;
 
+
+
   @nest & img {
     display: block;
     margin: auto auto;
 
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 15px);
+    max-width: calc(100% - 15px);
   }
 }
 

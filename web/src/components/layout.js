@@ -6,7 +6,7 @@ import styles from "./layout.module.css";
 
 const Layout = ({ children, hideHeader, siteTitle }) => (
   <>
-    {hideHeader ? null : <Header siteTitle={siteTitle} />}
+    {/*hideHeader ? null : <Header siteTitle={siteTitle} /> */}
     <div className={styles.content}>{children}</div>
   </>
 );

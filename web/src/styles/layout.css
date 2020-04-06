@@ -8,8 +8,8 @@ html {
 
 body {
   -webkit-font-smoothing: antialiased;
-  background: var(--color-white);
-  color: var(--color-black);
+  background: var(--color-light-gray);
+  color: var(--color-dark-blue);
   margin: 0;
 }
 
