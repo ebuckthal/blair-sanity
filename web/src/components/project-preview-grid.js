@@ -12,7 +12,9 @@ function ProjectPreviewGrid(props) {
         {props.nodes &&
           props.nodes.map((node) => (
             <div
-              className={node.columnSpan > 1 ? styles.gridItem2Column : styles.gridItem}
+              className={`${styles.gridItem} ${
+                node.columnSpan > 1 ? styles.span2 : ""
+              }`}
               key={node.id}
             >
               <ProjectPreview {...node} />

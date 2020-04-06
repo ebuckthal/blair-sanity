@@ -27,12 +27,10 @@
 
 }
 
-.gridItem2Column {
-  display: block;
-  display: grid;
-  height: 100%;
-  width: 100%;
-  grid-column-end: span 2;
+.span2 {
+  @media (--media-min-medium) {
+    grid-column-end: span 2;
+  }
 }
 
 .gridItem {
