@@ -3,10 +3,12 @@
 .root {
   box-sizing: border-box;
   max-width: 1240px;
-  padding: 1.5em;
   margin: 0 auto;
 
+  padding: 0.5rem;
+  box-sizing: border-box;
+
   @media (--media-min-small) {
-    padding: 2em;
+    padding: 1rem;
   }
 }

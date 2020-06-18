@@ -31,14 +31,20 @@ function Project(props) {
 
   return (
     <article className={styles.root}>
-      {props.mainImage && mainImage.asset && (
-        <div className={styles.mainImage}>
+      <div className={styles.header}>
+        <a href="/">Blair Ekleberry</a>
+        <a className={styles.email} href="mailto:blair.ekleberry@beauxartsparis.fr">
+          blair.ekleberry@beauxartsparis.fr
+        </a>
+      </div>
+      <div className={styles.mainImage}>
+        {props.mainImage && mainImage.asset && (
           <img
-            src={imageUrlFor(buildImageObj(mainImage)).width(1000).fit("scale").url()}
+            src={imageUrlFor(buildImageObj(mainImage)).width(2000).fit("scale").url()}
             alt={`Blair Ekleberry - ${title}`}
           />
-        </div>
-      )}
+        )}
+      </div>
     </article>
   );
 }
