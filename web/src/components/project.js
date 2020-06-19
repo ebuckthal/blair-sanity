@@ -32,10 +32,12 @@ function Project(props) {
   return (
     <article className={styles.root}>
       <div className={styles.header}>
-        <a href="/">Blair Ekleberry</a>
-        <a className={styles.email} href="mailto:blair.ekleberry@beauxartsparis.fr">
-          blair.ekleberry@beauxartsparis.fr
-        </a>
+        <div>
+          <Link to="/">Blair Ekleberry</Link>
+          <a className={styles.email} href="mailto:blair.ekleberry@beauxartsparis.fr">
+            blair.ekleberry@beauxartsparis.fr
+          </a>
+        </div>
       </div>
       <div className={styles.mainImage}>
         {props.mainImage && mainImage.asset && (
