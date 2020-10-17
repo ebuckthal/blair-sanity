@@ -1,4 +1,3 @@
-import { format, distanceInWords, differenceInDays } from "date-fns";
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "gatsby";
 import { buildImageObj } from "../lib/helpers";
@@ -6,7 +5,7 @@ import { imageUrlFor } from "../lib/image-url";
 import clsx from "clsx";
 
 function Project(props) {
-  const { _rawBody, title, mainImage, publishedAt } = props;
+  const { title, mainImage } = props;
 
   const [zoom, setZoom] = useState(false);
 
@@ -32,47 +31,41 @@ function Project(props) {
     };
   }, []);
 
-  useEffect(() => {
-    const listener = (e) => {
-      setMouseX(e.clientX);
-    };
-    window.addEventListener("mousemove", listener);
-    return () => {
-      window.removeEventListener("mousemove", listener);
-    };
-  }, []);
-
   return (
-    <div
-      onClick={() => setZoom((z) => !z)}
-      className="h-screen w-screen cursor-pointer"
-    >
+    <div className="h-screen w-screen">
       <div
         className={clsx(
           "text-shadow-gray-50 z-10 absolute top-0 w-full p-2 pb-5",
           "text-sm text-blue-800",
-          !zoom ? "opacity-100" : "opacity-0"
+          zoom ? "hidden" : null
         )}
       >
         <Link href="/">
-          <h1 className="inline-block mr-5">Blair Ekleberry</h1>
+          <span className="cursor-pointer inline-block mr-5">
+            Blair Ekleberry
+          </span>
         </Link>
         <a href="mailto:blair.ekleberry@beauxartsparis.fr">
           blair.ekleberry@beauxartsparis.fr
         </a>
       </div>
       <img
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          setZoom((z) => !z);
+        }}
         src={imgUrl}
+        style={!zoom ? { maxWidth: "100vw", maxHeight: "100vh" } : undefined}
         className={clsx(
-          "hide-alt max-w-none z-0 m-auto inset-0 mt-0 absolute",
-          !zoom ? "w-full h-full object-contain" : null
+          "cursor-pointer z-0 absolute",
+          zoom ? "max-w-none" : "inset-0 m-auto"
         )}
-        alt={`Blair Ekleberry - ${title}`}
       />
       <div
         className={clsx(
           "text-shadow-gray-50 whitespace-pre-line text-blue-800 text-sm z-10 absolute w-full bottom-0 p-2 pt-5",
-          !zoom ? "opacity-100" : "opacity-0"
+          zoom ? "hidden" : null
         )}
       >
         <div>{mainImage.caption1 || null}</div>
