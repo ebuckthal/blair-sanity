@@ -13,7 +13,10 @@ function ProjectPreview(props) {
       <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
           <img
-            src={imageUrlFor(buildImageObj(props.mainImage)).fit("max").width(600).url()}
+            src={imageUrlFor(buildImageObj(props.mainImage))
+              .fit("max")
+              .width(600)
+              .url()}
             alt={`Blair Ekleberry - ${props.title}`}
           />
         )}

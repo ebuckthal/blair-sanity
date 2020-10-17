@@ -31,6 +31,9 @@ export const query = graphql`
         asset {
           _id
         }
+        caption1
+        caption2
+        caption3
       }
       title
       slug {

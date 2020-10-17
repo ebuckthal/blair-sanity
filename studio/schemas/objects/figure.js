@@ -7,8 +7,22 @@ export default {
   },
   fields: [
     {
-      title: "Caption",
-      name: "caption",
+      title: "Caption 1",
+      name: "caption1",
+      description: "Small amount of text shown below the work (optional)",
+      type: "string",
+      options: { isHighlighted: true },
+    },
+    {
+      title: "Caption 2",
+      name: "caption2",
+      description: "Small amount of text shown below the work (optional)",
+      type: "string",
+      options: { isHighlighted: true },
+    },
+    {
+      title: "Caption 3",
+      name: "caption3",
       description: "Small amount of text shown below the work (optional)",
       type: "string",
       options: { isHighlighted: true },

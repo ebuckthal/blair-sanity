@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean-cache": "gatsby clean",
-    "dev": "npm run clean-cache && gatsby develop",
+    "dev": "npm run clean-cache && gatsby develop --host 0.0.0.0",
     "lint": "eslint .",
     "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
@@ -14,15 +14,19 @@
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/image-url": "^0.140.15",
+    "@tailwindcss/ui": "^0.6.2",
+    "clsx": "^1.1.1",
     "date-fns": "^1.30.1",
     "gatsby": "^2.9.11",
     "gatsby-image": "^2.0.41",
-    "gatsby-plugin-postcss": "^2.0.7",
+    "gatsby-plugin-postcss": "^2.3.11",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-source-sanity": "^4.0.1",
+    "lodash": "^4.17.20",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "tailwindcss": "^1.6.2"
   },
   "devDependencies": {
     "dotenv": "^8.0.0",

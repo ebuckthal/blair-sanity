@@ -8,10 +8,6 @@
   padding: 0.5rem;
   box-sizing: border-box;
 
-  height: calc(var(--vh, 1vh) * 100);
-
-  width: 100vw;
-  width: calc(var(--vw, 1vw) * 100);
 
 }
 
@@ -90,18 +86,31 @@
 }
 
 .mainImage {
-  position: relative;
-  display: grid;
-  height: 100%;
-
-  @nest & img {
-    display: block;
-    margin: auto auto;
-
-    max-height: calc(100% - 1rem);
-    max-width: calc(100%);
-  }
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
 }
+
+@media (orientation: landscape) { 
+  .mainImage { 
+    height:100%; 
+    width: inherit;
+  } 
+}
+@media (orientation: portrait) { 
+  .mainImage { 
+    width:100%; 
+    height: inherit;
+  } 
+}
+
 
 .grid {
   display: grid;
