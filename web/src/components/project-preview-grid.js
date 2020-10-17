@@ -28,10 +28,7 @@ function ProjectPreviewGrid(props) {
 
           return (
             <Link
-              className={clsx(
-                "self-center self-between"
-                /* node.columnSpan > 1 ? "md:col-span-2" : "" */
-              )}
+              className={clsx("self-center self-between")}
               key={node.id}
               to={`/${node.slug.current}`}
             >

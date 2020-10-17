@@ -1,12 +1,8 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  purge: [],
+  purge: ["./**/*.js"],
   theme: {
-    gradients: (theme) => ({
-      gray: [theme("colors.gray.50"), "rgba(0,0,0,0)"],
-      "gray-reverse": ["rgba(0,0,0,0)", theme("colors.gray.50")],
-    }),
     extend: {
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
@@ -14,5 +10,5 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [require("@tailwindcss/ui"), require("./plugins/gradient")],
+  plugins: [require("@tailwindcss/ui")],
 };
