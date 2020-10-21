@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import clsx from "clsx";
+import { X } from "react-feather";
 
 function Project(props) {
   const { title, mainImage } = props;
@@ -32,22 +33,34 @@ function Project(props) {
   }, []);
 
   return (
-    <div className="h-screen w-screen">
+    <>
       <div
         className={clsx(
-          "text-shadow-gray-50 z-10 absolute top-0 w-full p-2 pb-5",
-          "text-sm text-blue-800",
-          zoom ? "hidden" : null
+          zoom ? "hidden" : null,
+          "bg-gray-50 flex flex-col justify-between",
+          "h-screen w-screen p-2 md:p-3 lg:p-5"
         )}
       >
-        <Link href="/">
-          <span className="cursor-pointer inline-block mr-5">
-            Blair Ekleberry
-          </span>
-        </Link>
-        <a href="mailto:blair.ekleberry@beauxartsparis.fr">
-          blair.ekleberry@beauxartsparis.fr
-        </a>
+        <div className="flex flex-row justify-between items-start">
+          <div className={clsx("flex flex-col items-start")}>
+            <Link to="/">
+              <span className="relative z-10">Blair Ekleberry</span>
+            </Link>
+            <Link to="/">
+              <span className="relative z-10">
+                blair.ekleberry@beauxartsparis.fr
+              </span>
+            </Link>
+          </div>
+          <Link to="/">
+            <X className="relative z-10 svg-shadow-gray-50" />
+          </Link>
+        </div>
+        <div className={clsx("flex flex-col items-start")}>
+          <span className="relative z-10">{mainImage.caption1 || null}</span>
+          <span className="relative z-10">{mainImage.caption2 || null}</span>
+          <span className="relative z-10">{mainImage.caption3 || null}</span>
+        </div>
       </div>
       <img
         onClick={(e) => {
@@ -58,21 +71,11 @@ function Project(props) {
         src={imgUrl}
         style={!zoom ? { maxWidth: "100vw", maxHeight: "100vh" } : undefined}
         className={clsx(
-          "cursor-pointer z-0 absolute",
+          "cursor-zoom-in absolute",
           zoom ? "max-w-none" : "inset-0 m-auto"
         )}
       />
-      <div
-        className={clsx(
-          "text-shadow-gray-50 whitespace-pre-line text-blue-800 text-sm z-10 absolute w-full bottom-0 p-2 pt-5",
-          zoom ? "hidden" : null
-        )}
-      >
-        <div>{mainImage.caption1 || null}</div>
-        <div>{mainImage.caption2 || null}</div>
-        <div>{mainImage.caption3 || null}</div>
-      </div>
-    </div>
+    </>
   );
 }
 

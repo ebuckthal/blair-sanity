@@ -7,6 +7,12 @@ module.exports = {
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
+      zIndex: {
+        "-1": "-1",
+      },
+      cursor: {
+        "zoom-in": "zoom-in",
+      },
     },
   },
   variants: {},

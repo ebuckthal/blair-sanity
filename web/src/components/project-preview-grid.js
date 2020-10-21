@@ -7,13 +7,13 @@ import { imageUrlFor } from "../lib/image-url";
 
 function ProjectPreviewGrid(props) {
   return (
-    <div className="p-2">
-      <div className={clsx("w-full pb-5", "text-sm text-blue-800")}>
-        <Link href="/">
-          <h1 className="inline-block mr-5">Blair Ekleberry</h1>
+    <div className="bg-gray-50 p-2 md:p-3 lg:p-5 flex flex-col">
+      <div className={clsx("flex flex-col w-full items-start pb-5")}>
+        <Link to="/">
+          <h1 className="inline">Blair Ekleberry</h1>
         </Link>
         <a href="mailto:blair.ekleberry@beauxartsparis.fr">
-          blair.ekleberry@beauxartsparis.fr
+          <span>blair.ekleberry@beauxartsparis.fr</span>
         </a>
       </div>
       <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">

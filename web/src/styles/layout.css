@@ -1,42 +1,15 @@
-
 @import 'tailwindcss/base';
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
 @layer utilities {
   .text-shadow-gray-50 {
-    text-shadow: 1px 1px 0px rgba(249, 250, 251, var(--bg-opacity));
+    text-shadow: 1px 1px 0px rgba(249, 250, 251, 1);
   }
 
-  .hide-alt {
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
+  .svg-shadow-gray-50 {
+    -webkit-filter: drop-shadow(1px 1px 0px rgba(249, 250, 251, 1));
+    filter: drop-shadow(1px 1px 0px rgba(249, 250, 251, 1));
   }
 }
 
-
-/* @import './custom-properties.css'; */
-
-
-/*
-html {
-  font-family: var(--font-family-sans);
-  font-size: var(--font-base-size);
-  line-height: var(--font-base-line-height);
-}
-
-body {
-  -webkit-font-smoothing: antialiased;
-  background: var(--color-light-gray);
-  color: var(--color-dark-blue);
-  margin: 0;
-}
-
-html,
-body,
-body > div,
-body > div > div {
-  height: 100%;
-}
-*/
